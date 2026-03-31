@@ -5,27 +5,73 @@
     <title>Portfolio - Ariel Yameogo</title>
     <style>
         body {
-            font-family: Arial;
+            font-family: Arial, sans-serif;
             margin: 0;
             background: #f4f4f4;
+            color: #333;
         }
+
         header {
             background: #0073b1;
             color: white;
             text-align: center;
-            padding: 30px;
+            padding: 40px 20px;
         }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        header p {
+            margin: 10px 0 0;
+            font-size: 1.2em;
+        }
+
         section {
-            margin: 20px;
+            margin: 20px auto;
             padding: 20px;
+            max-width: 900px;
             background: white;
             border-radius: 10px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
         }
+
         h2 {
             color: #0073b1;
+            border-bottom: 2px solid #0073b1;
+            padding-bottom: 5px;
         }
+
+        h3 {
+            margin-bottom: 5px;
+        }
+
+        ul {
+            list-style: square inside;
+        }
+
         a {
             color: #0073b1;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .project {
+            margin-bottom: 20px;
+        }
+
+        .tech {
+            font-weight: bold;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-top: 5px;
         }
     </style>
 </head>
@@ -33,37 +79,98 @@
 
 <header>
     <h1>Ariel Yameogo</h1>
-    <p>Élève ingénieur Réseaux & Télécommunications</p>
+    <p>Élève Ingénieur Réseaux & Télécommunications | Cybersécurité • Cloud • Machine Learning • Deep Learning</p>
 </header>
 
 <section>
     <h2>À propos</h2>
-    <p>Passionné par les réseaux, la cybersécurité, le cloud et l’intelligence artificielle. À la recherche d’un stage.</p>
+    <p>Passionné par les réseaux, la cybersécurité, le cloud et l’intelligence artificielle. Je crée des projets concrets allant des applications Java aux modèles de Deep Learning, en passant par les simulations électroniques et réseaux.</p>
 </section>
 
 <section>
     <h2>Projets</h2>
 
-    <h3>🔐 Application E-commerce sécurisée</h3>
-    <p>Développement d'une application web avec authentification sécurisée.</p>
-    <a href="https://github.com/Yameogo2004/APPLCATION-E_COMMERCE">Voir le projet</a>
+    <!-- Applications Java -->
+    <div class="project">
+        <h3>APPLICATION-E_COMMERCE (Java Swing)</h3>
+        <p>Application de e-commerce avec interface graphique et gestion sécurisée des données.</p>
+        <p class="tech">Technologies : Java, Swing</p>
+        <a href="https://github.com/Yameogo2004/APPLCATION-E_COMMERCE">Voir le projet</a>
+        <!-- <img src="captures/ecommerce.png" alt="Capture Application E-Commerce"> -->
+    </div>
+
+    <!-- Machine Learning / Deep Learning -->
+    <div class="project">
+        <h3>TRAFFIC-DEEP-LEARNING-PREDICTION</h3>
+        <p>Prédiction du trafic routier à l’aide de modèles Deep Learning.</p>
+        <p class="tech">Technologies : Python, TensorFlow, Keras, Pandas</p>
+        <a href="https://github.com/Yameogo2004/TRAFFIC-DEEP-LEARNING-PREDICTION">Voir le projet</a>
+    </div>
+
+    <div class="project">
+        <h3>TRAFFIC-INTERFACE</h3>
+        <p>Interface déployée pour interagir avec le projet Deep Learning, transformant la théorie en pratique.</p>
+        <p class="tech">Technologies : Python, Tkinter / Flask</p>
+        <!-- <img src="captures/traffic_interface.png" alt="Capture Traffic Interface"> -->
+    </div>
+
+    <div class="project">
+        <h3>TIME-SERIE-PROJECT / ML-PROJECT</h3>
+        <p>Projets de Machine Learning pour séries temporelles et autres modèles.</p>
+        <p class="tech">Technologies : Python, Scikit-Learn, TensorFlow</p>
+    </div>
+
+    <!-- Réseaux / Télécom / Modulation -->
+    <div class="project">
+        <h3>PROJET_NETSPOT</h3>
+        <p>Simulation et configuration réseau (VLAN, Wi-Fi, Packet Tracer).</p>
+        <p class="tech">Technologies : Cisco Packet Tracer</p>
+    </div>
+
+    <div class="project">
+        <h3>PROJET-QAM (Digital Modulation)</h3>
+        <p>Étude et simulation de modulation QAM pour télécommunications.</p>
+        <p class="tech">Technologies : MATLAB / Simulink</p>
+    </div>
+
+    <!-- Électronique / Hardware -->
+    <div class="project">
+        <h3>SMART-TRASH-BIN</h3>
+        <p>Montage réel de poubelle intelligente pour suivi du remplissage.</p>
+        <p class="tech">Technologies : Arduino, capteurs, circuits</p>
+        <!-- <img src="captures/smart_trash_bin.jpg" alt="Smart Trash Bin"> -->
+    </div>
+
+    <div class="project">
+        <h3>ELECTRONIQUE-PROJECT (Proteus)</h3>
+        <p>Simulation électronique via Proteus, microcontrôleur et capteurs.</p>
+        <!-- <img src="captures/electronique_projet.png" alt="Electronique Project"> -->
+    </div>
+
+    <div class="project">
+        <h3>TNS-PROJECT</h3>
+        <p>À préciser selon le contenu réel du projet.</p>
+    </div>
 
 </section>
 
 <section>
     <h2>Compétences</h2>
     <ul>
-        <li>Cisco / Réseaux</li>
-        <li>Cybersécurité</li>
-        <li>Machine Learning</li>
-        <li>Linux / VMware</li>
+        <li>Cisco / Réseaux / VLAN / TCP-IP</li>
+        <li>Cybersécurité / VPN / Firewall</li>
+        <li>Cloud / Virtualisation / VMware</li>
+        <li>Java / Swing / Applications Desktop</li>
+        <li>Python / Machine Learning / Deep Learning</li>
+        <li>Electronique / Arduino / Proteus</li>
     </ul>
 </section>
 
 <section>
     <h2>Contact</h2>
-    <p>Email : ton email</p>
-    <p>LinkedIn : ton lien</p>
+    <p>Email : tonemail@email.com</p>
+    <p>LinkedIn : <a href="https://www.linkedin.com/in/ariel-barthélémy-w-yameogo-43a39b332">Mon profil LinkedIn</a></p>
+    <p>GitHub : <a href="https://github.com/Yameogo2004">Mon GitHub</a></p>
 </section>
 
 </body>
