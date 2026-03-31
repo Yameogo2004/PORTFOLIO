@@ -2,24 +2,434 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio d'Ariel Barthélémy Wendtoin YAMEOGO - Ingénieur Réseaux & Télécommunications">
-    <meta name="author" content="Ariel Barthélémy Wendtoin YAMEOGO">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Ariel YAMEOGO | Ingénieur Réseaux & IA</title>
-    
-    <!-- Fonts & Icons -->
+    <!-- Google Fonts & Font Awesome pour une touche moderne -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f5f7fc;
+            color: #1e293b;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        /* Container global */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header Hero */
+        .hero {
+            background: linear-gradient(135deg, #0a2540 0%, #0f3b5c 100%);
+            color: white;
+            padding: 4rem 0 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -30%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            bottom: -20%;
+            left: -5%;
+            width: 350px;
+            height: 350px;
+            background: rgba(0,180,216,0.08);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #ffffff, #b9e6ff);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #e2f0ff;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            max-width: 700px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 0.5rem;
+        }
+
+        .badge {
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(4px);
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+        }
+
+        /* Section cards global */
+        section {
+            margin: 3rem 0;
+        }
+
+        .section-card {
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.05);
+            padding: 2rem 2rem;
+            transition: transform 0.2s ease, box-shadow 0.2s;
+        }
+
+        .section-card:hover {
+            box-shadow: 0 20px 35px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: #0f3b5c;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 1.8rem;
+            border-left: 5px solid #2b7a62;
+            padding-left: 1rem;
+        }
+
+        h2 i {
+            color: #2b7a62;
+            font-size: 1.8rem;
+        }
+
+        h3 {
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #1e2f3e;
+        }
+
+        /* Projets en grille */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .project-item {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 1.5rem;
+            transition: all 0.25s ease;
+            border: 1px solid #eef2f8;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+        }
+
+        .project-item:hover {
+            transform: translateY(-5px);
+            border-color: #cbdde9;
+            box-shadow: 0 20px 28px -12px rgba(0,0,0,0.12);
+        }
+
+        .project-title {
+            display: flex;
+            align-items: baseline;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 8px;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-title h3 {
+            margin-bottom: 0;
+            font-size: 1.3rem;
+        }
+
+        .tech-stack {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: #eef2ff;
+            padding: 0.2rem 0.7rem;
+            border-radius: 30px;
+            color: #2c5f8a;
+        }
+
+        .project-desc {
+            color: #334155;
+            margin: 0.8rem 0 1rem 0;
+            font-size: 0.95rem;
+            line-height: 1.45;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #1e6f5c;
+            text-decoration: none;
+            border-bottom: 1.5px solid transparent;
+            transition: 0.2s;
+        }
+
+        .project-link i {
+            font-size: 0.85rem;
+            transition: transform 0.2s;
+        }
+
+        .project-link:hover {
+            color: #0b4b3e;
+            border-bottom-color: #1e6f5c;
+        }
+
+        .project-link:hover i {
+            transform: translateX(4px);
+        }
+
+        /* Compétences en badges modernes */
+        .skills-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 1rem;
+        }
+
+        .skill-tag {
+            background: #eef2fa;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 0.85rem;
+            color: #1e4663;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .skill-tag i {
+            font-size: 0.9rem;
+            color: #2b7a62;
+        }
+
+        .skill-tag:hover {
+            background: #e1e9f3;
+            transform: translateY(-2px);
+        }
+
+        /* Formation & Certifications - Layout 2 colonnes */
+        .edu-cert-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .edu-block, .cert-block {
+            background: #f8fafc;
+            border-radius: 20px;
+            padding: 1.5rem;
+        }
+
+        .edu-block h3, .cert-block h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.3rem;
+            margin-bottom: 1.2rem;
+            color: #0f3b5c;
+            border-bottom: 2px solid #2b7a62;
+            padding-bottom: 0.5rem;
+        }
+
+        .edu-block h3 i, .cert-block h3 i {
+            color: #2b7a62;
+            font-size: 1.3rem;
+        }
+
+        .edu-item, .cert-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .edu-item h4, .cert-item h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1e4663;
+            margin-bottom: 0.3rem;
+        }
+
+        .edu-date, .cert-date {
+            font-size: 0.8rem;
+            color: #2b7a62;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .edu-desc, .cert-desc {
+            font-size: 0.9rem;
+            color: #475569;
+            line-height: 1.4;
+        }
+
+        .award-badge {
+            background: linear-gradient(135deg, #fff9e6, #fff3d1);
+            padding: 1rem;
+            border-radius: 16px;
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .award-badge i {
+            font-size: 1.5rem;
+            color: #f4b942;
+        }
+
+        @media (max-width: 780px) {
+            .edu-cert-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        /* contact */
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 1rem;
+            align-items: center;
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #f8fafc;
+            padding: 0.6rem 1.3rem;
+            border-radius: 60px;
+            font-size: 0.95rem;
+        }
+
+        .contact-detail i {
+            font-size: 1.3rem;
+            color: #2b7a62;
+            width: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.2rem;
+            margin-left: auto;
+        }
+
+        .social-btn {
+            background: #eef2fa;
+            padding: 0.6rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 500;
+            transition: 0.2s;
+            text-decoration: none;
+            color: #1e4663;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .social-btn i {
+            font-size: 1rem;
+        }
+
+        .social-btn:hover {
+            background: #2b7a62;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: #0f2c3b;
+            color: #b9d4e3;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            font-size: 0.85rem;
+            border-radius: 32px 32px 0 0;
+        }
+
+        hr {
+            margin: 1rem 0;
+            border: 0;
+            height: 1px;
+            background: linear-gradient(to right, #e2e8f0, transparent);
+        }
+
+        @media (max-width: 780px) {
+            .container {
+                padding: 0 1.2rem;
+            }
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            .contact-info {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .social-links {
+                margin-left: 0;
+                margin-top: 0.5rem;
+            }
+            h2 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
 <div class="hero">
     <div class="container hero-content">
         <h1>Ariel Barthélémy Wendtoin YAMEOGO</h1>
-        <p>Élève Ingénieur en Réseaux & Télécommunications · Cybersécurité, Cloud Computing & Intelligence Artificielle</p>
+        <p>Élève Ingénieur en Réseaux & Télécommunications · spécialisé Cybersécurité, Cloud Computing & Intelligence Artificielle (ML/DL).</p>
         <div class="hero-badge">
             <span class="badge"><i class="fas fa-shield-alt"></i> Cybersécurité</span>
             <span class="badge"><i class="fas fa-cloud"></i> Cloud & Virtualisation</span>
@@ -30,62 +440,203 @@
 </div>
 
 <div class="container">
-    <!-- Section À propos -->
+    <!-- À propos section -->
     <section>
         <div class="section-card">
             <h2><i class="fas fa-user-astronaut"></i> À propos</h2>
-            <p>Ingénieur en devenir passionné par les infrastructures réseau sécurisées, le cloud computing et l'intelligence artificielle. Je conçois des projets concrets allant des applications Java aux modèles de Deep Learning, en passant par les simulations réseau et électronique.</p>
-            <p style="margin-top: 1rem;">Mon objectif : allier innovation technologique et solutions robustes pour répondre aux défis de la transformation digitale.</p>
+            <p style="font-size: 1.05rem; margin-bottom: 0.5rem;">Ingénieur en devenir avec une forte appétence pour les infrastructures réseau sécurisées, l'exploitation du cloud et l'IA appliquée. Je conçois des projets concrets allant des applications Java robustes aux modèles de prédiction basés sur le Deep Learning, en passant par des simulations électroniques et des architectures réseau complexes.</p>
+            <p style="margin-top: 0.8rem;">Passionné par l'innovation technologique, je mets un point d'honneur à allier théorie et pratique pour livrer des solutions impactantes, éthiques et scalables.</p>
         </div>
     </section>
 
-    <!-- Section Projets - IMPORTANT: id="projects-container" -->
+    <!-- Projets phares -->
     <section>
         <div class="section-card">
-            <h2><i class="fas fa-code-branch"></i> Projets</h2>
-            <div id="projects-container">
-                <!-- Le JavaScript va charger les projets ici -->
-                <div class="loading"><i class="fas fa-spinner"></i> Chargement des projets...</div>
+            <h2><i class="fas fa-code-branch"></i> Projets majeurs</h2>
+            <div class="projects-grid">
+                <div class="project-item">
+                    <div class="project-title">
+                        <h3>🛒 E-Commerce Desktop</h3>
+                        <span class="tech-stack">Java • Swing</span>
+                    </div>
+                    <div class="project-desc">Application de gestion e-commerce avec interface graphique intuitive, gestion sécurisée des données clients et produits.</div>
+                    <a href="https://github.com/Yameogo2004/APPLCATION-E_COMMERCE" class="project-link" target="_blank" rel="noopener"><i class="fab fa-github"></i> Explorer le code <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="project-item">
+                    <div class="project-title">
+                        <h3>🚦 Traffic Deep Learning</h3>
+                        <span class="tech-stack">Python • TensorFlow • Keras</span>
+                    </div>
+                    <div class="project-desc">Prédiction de flux routier via réseaux de neurones récurrents (LSTM) et analyse de séries temporelles.</div>
+                    <a href="https://github.com/Yameogo2004/Traffic-Deep-Learning-Prediction" class="project-link" target="_blank"><i class="fab fa-github"></i> Dépôt principal <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="project-item">
+                    <div class="project-title">
+                        <h3>📊 Traffic Interface</h3>
+                        <span class="tech-stack">Flask • Tkinter • API</span>
+                    </div>
+                    <div class="project-desc">Interface utilisateur interactive pour visualiser les prédictions de trafic en temps réel.</div>
+                    <a href="https://github.com/Yameogo2004/Traffic-Interface" class="project-link" target="_blank"><i class="fab fa-github"></i> Voir l'interface <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="project-item">
+                    <div class="project-title">
+                        <h3>📈 Time Series & ML</h3>
+                        <span class="tech-stack">Scikit-Learn • Pandas • XGBoost</span>
+                    </div>
+                    <div class="project-desc">Modélisation prédictive pour données temporelles. Feature engineering, validation croisée.</div>
+                    <a href="https://github.com/Yameogo2004/TIME_SERIE_PROJECT" class="project-link" target="_blank"><i class="fab fa-github"></i> Time Serie <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="project-item">
+                    <div class="project-title">
+                        <h3>🤖 ML Pipeline</h3>
+                        <span class="tech-stack">Python • Scikit-Learn</span>
+                    </div>
+                    <div class="project-desc">Pipeline complet de Machine Learning : nettoyage, modèles supervisés, évaluation.</div>
+                    <a href="https://github.com/Yameogo2004/ML-PROJECT" class="project-link" target="_blank"><i class="fab fa-github"></i> ML-Projects <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="project-item">
+                    <div class="project-title">
+                        <h3>🌐 PROJET NETSPOT</h3>
+                        <span class="tech-stack">Cisco • Packet Tracer • VLAN</span>
+                    </div>
+                    <div class="project-desc">Simulation d'infrastructure réseau sécurisée : segmentation VLAN, routage inter-VLAN.</div>
+                    <a href="https://github.com/Yameogo2004/PROJET_NETSPOT" class="project-link" target="_blank"><i class="fab fa-github"></i> Config réseau <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="project-item">
+                    <div class="project-title">
+                        <h3>📡 Modulation QAM</h3>
+                        <span class="tech-stack">MATLAB • Simulink</span>
+                    </div>
+                    <div class="project-desc">Étude complète de modulation numérique QAM, analyse de constellation, taux d'erreur binaire.</div>
+                    <a href="https://github.com/Yameogo2004/Projet-QAM" class="project-link" target="_blank"><i class="fab fa-github"></i> Simulink & scripts <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="project-item">
+                    <div class="project-title">
+                        <h3>📶 TNS Project</h3>
+                        <span class="tech-stack">MATLAB • Réseaux</span>
+                    </div>
+                    <div class="project-desc">Simulation avancée de techniques de transmission numérique, modélisation de canaux.</div>
+                    <a href="https://github.com/Yameogo2004/TNS-PROJECT" class="project-link" target="_blank"><i class="fab fa-github"></i> TNS Repository <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="project-item">
+                    <div class="project-title">
+                        <h3>🗑️ Smart Trash Bin</h3>
+                        <span class="tech-stack">Arduino • Capteurs • IoT</span>
+                    </div>
+                    <div class="project-desc">Poubelle connectée avec capteur ultrasonique et notification de remplissage. Prototype IoT.</div>
+                    <a href="https://github.com/Yameogo2004/Smart-Trash-Bin" class="project-link" target="_blank"><i class="fab fa-github"></i> Matériel & code <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="project-item">
+                    <div class="project-title">
+                        <h3>⚡ Electronique Proteus</h3>
+                        <span class="tech-stack">Proteus • µC • Simulation</span>
+                    </div>
+                    <div class="project-desc">Simulation de circuits électroniques avec microcontrôleur, capteurs analogiques/numériques.</div>
+                    <a href="https://github.com/Yameogo2004/ELECTRONIQUE-PROJECT" class="project-link" target="_blank"><i class="fab fa-github"></i> Sim Proteus <i class="fas fa-arrow-right"></i></a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Compétences - IMPORTANT: id="skills-container" -->
+    <!-- Compétences -->
     <section>
         <div class="section-card">
-            <h2><i class="fas fa-cogs"></i> Compétences</h2>
-            <div id="skills-container">
-                <div class="loading"><i class="fas fa-spinner"></i> Chargement...</div>
+            <h2><i class="fas fa-cogs"></i> Compétences & Technologies</h2>
+            <div class="skills-cloud">
+                <span class="skill-tag"><i class="fas fa-network-wired"></i> Cisco / VLAN / TCP-IP</span>
+                <span class="skill-tag"><i class="fas fa-shield-hog"></i> Cybersécurité / VPN / Firewall</span>
+                <span class="skill-tag"><i class="fas fa-cloud-upload-alt"></i> Cloud (AWS/Azure) / VMware</span>
+                <span class="skill-tag"><i class="fab fa-java"></i> Java / Swing / JDBC</span>
+                <span class="skill-tag"><i class="fab fa-python"></i> Python / TensorFlow / Keras</span>
+                <span class="skill-tag"><i class="fas fa-microchip"></i> Arduino / Proteus / IoT</span>
+                <span class="skill-tag"><i class="fas fa-chart-line"></i> Scikit-Learn / Pandas</span>
+                <span class="skill-tag"><i class="fas fa-database"></i> MySQL / SQLite</span>
+                <span class="skill-tag"><i class="fas fa-code"></i> Git / GitHub / CI/CD</span>
+                <span class="skill-tag"><i class="fas fa-charging-station"></i> Réseaux mobiles / 5G / Modulation</span>
             </div>
         </div>
     </section>
 
-    <!-- Section Formation - IMPORTANT: id="timeline-container" -->
+    <!-- Formation & Certifications - Séparées en 2 colonnes -->
     <section>
         <div class="section-card">
             <h2><i class="fas fa-graduation-cap"></i> Formation & Certifications</h2>
-            <div id="timeline-container">
-                <div class="loading"><i class="fas fa-spinner"></i> Chargement...</div>
+            <div class="edu-cert-grid">
+                <!-- Bloc Formation -->
+                <div class="edu-block">
+                    <h3><i class="fas fa-university"></i> Formation</h3>
+                    <div class="edu-item">
+                        <h4>🎓 Cycle Ingénieur en Réseaux & Télécommunications</h4>
+                        <div class="edu-date">2023 - Présent</div>
+                        <div class="edu-desc">École Nationale des Sciences Appliquées de Tétouan · Spécialisation Cybersécurité & Intelligence Artificielle</div>
+                    </div>
+                    <div class="edu-item">
+                        <h4>📘 Classes Préparatoires</h4>
+                        <div class="edu-date">2021 - 2023</div>
+                        <div class="edu-desc">Mathématiques & Physique · Université de Ouagadougou</div>
+                    </div>
+                    <div class="edu-item">
+                        <h4>🎓 Baccalauréat Série D</h4>
+                        <div class="edu-date">2021</div>
+                        <div class="edu-desc">Lycée Privé Saint Jean Bosco · Mention Bien</div>
+                    </div>
+                </div>
+
+                <!-- Bloc Certifications -->
+                <div class="cert-block">
+                    <h3><i class="fas fa-certificate"></i> Certifications</h3>
+                    <div class="cert-item">
+                        <h4>📜 Cisco CCNA (en cours)</h4>
+                        <div class="cert-date">2024 - 2025</div>
+                        <div class="cert-desc">Réseaux d'entreprise, sécurité, automatisation et protocoles avancés.</div>
+                    </div>
+                    <div class="cert-item">
+                        <h4>🤖 Deep Learning Specialization</h4>
+                        <div class="cert-date">2024</div>
+                        <div class="cert-desc">Réseaux de neurones, CNN, RNN, optimisation avancée (Coursera).</div>
+                    </div>
+                    <div class="cert-item">
+                        <h4>☁️ AWS Cloud Practitioner (en cours)</h4>
+                        <div class="cert-date">2025</div>
+                        <div class="cert-desc">Fondamentaux du cloud AWS, services et architecture.</div>
+                    </div>
+                    <div class="award-badge">
+                        <i class="fas fa-trophy"></i>
+                        <div><strong>Projet primé :</strong> Participation au hackathon IoT & GreenTech 2024 (Smart Trash Bin)</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Section Contact - IMPORTANT: id="contact-container" -->
+    <!-- Contact -->
     <section>
         <div class="section-card">
-            <h2><i class="fas fa-paper-plane"></i> Contact</h2>
-            <div id="contact-container">
-                <div class="loading"><i class="fas fa-spinner"></i> Chargement...</div>
+            <h2><i class="fas fa-paper-plane"></i> Contact & réseaux</h2>
+            <div class="contact-info">
+                <div class="contact-detail">
+                    <i class="fas fa-envelope"></i>
+                    <span>arielyameogo2004@gmail.com</span>
+                </div>
+                <div class="contact-detail">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+212 604280149 / +226 55623931</span>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/ariel-barthélémy-w-yameogo-43a39b332" class="social-btn" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://github.com/Yameogo2004" class="social-btn" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+                </div>
             </div>
+            <hr>
+            <p style="margin-top: 1rem; font-size: 0.9rem; display: flex; align-items: center; gap: 10px;"><i class="fas fa-map-marker-alt"></i> Basé entre Maroc & Burkina Faso · Ouvert à des opportunités en réseaux, télécoms, cloud engineering et IA.</p>
         </div>
     </section>
 </div>
 
 <footer>
-    <p>© 2025 Ariel Barthélémy Wendtoin YAMEOGO — Portfolio Ingénieur</p>
-    <p style="margin-top: 0.5rem; font-size: 0.75rem;">Tous les projets sont accessibles sur GitHub</p>
+    <p>© 2025 Ariel Barthélémy Wendtoin YAMEOGO — Portfolio Ingénieur | Construit avec <i class="fas fa-heart" style="color: #ff7b72;"></i> pour l'innovation et la fiabilité.</p>
+    <p style="margin-top: 0.5rem; font-size: 0.75rem;">Dernière mise à jour : Mars 2025 — Tous les projets sont accessibles sur GitHub.</p>
 </footer>
 
-<script src="js/main.js"></script>
 </body>
 </html>
