@@ -257,81 +257,6 @@
             transform: translateY(-2px);
         }
 
-        /* Formation & Certifications - Layout 2 colonnes */
-        .edu-cert-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-
-        .edu-block, .cert-block {
-            background: #f8fafc;
-            border-radius: 20px;
-            padding: 1.5rem;
-        }
-
-        .edu-block h3, .cert-block h3 {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.3rem;
-            margin-bottom: 1.2rem;
-            color: #0f3b5c;
-            border-bottom: 2px solid #2b7a62;
-            padding-bottom: 0.5rem;
-        }
-
-        .edu-block h3 i, .cert-block h3 i {
-            color: #2b7a62;
-            font-size: 1.3rem;
-        }
-
-        .edu-item, .cert-item {
-            margin-bottom: 1.5rem;
-        }
-
-        .edu-item h4, .cert-item h4 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: #1e4663;
-            margin-bottom: 0.3rem;
-        }
-
-        .edu-date, .cert-date {
-            font-size: 0.8rem;
-            color: #2b7a62;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .edu-desc, .cert-desc {
-            font-size: 0.9rem;
-            color: #475569;
-            line-height: 1.4;
-        }
-
-        .award-badge {
-            background: linear-gradient(135deg, #fff9e6, #fff3d1);
-            padding: 1rem;
-            border-radius: 16px;
-            margin-top: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .award-badge i {
-            font-size: 1.5rem;
-            color: #f4b942;
-        }
-
-        @media (max-width: 780px) {
-            .edu-cert-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-        }
-
         /* contact */
         .contact-info {
             display: flex;
@@ -449,96 +374,106 @@
         </div>
     </section>
 
-    <!-- Projets phares -->
+    <!-- Projets phares (structure enrichie) -->
     <section>
         <div class="section-card">
             <h2><i class="fas fa-code-branch"></i> Projets majeurs</h2>
             <div class="projects-grid">
+                <!-- E-COMMERCE -->
                 <div class="project-item">
                     <div class="project-title">
                         <h3>🛒 E-Commerce Desktop</h3>
                         <span class="tech-stack">Java • Swing</span>
                     </div>
-                    <div class="project-desc">Application de gestion e-commerce avec interface graphique intuitive, gestion sécurisée des données clients et produits.</div>
+                    <div class="project-desc">Application de gestion e-commerce avec interface graphique intuitive, gestion sécurisée des données clients et produits. Architecture MVC simplifiée.</div>
                     <a href="https://github.com/Yameogo2004/APPLCATION-E_COMMERCE" class="project-link" target="_blank" rel="noopener"><i class="fab fa-github"></i> Explorer le code <i class="fas fa-arrow-right"></i></a>
                 </div>
+                <!-- Traffic Deep Learning -->
                 <div class="project-item">
                     <div class="project-title">
                         <h3>🚦 Traffic Deep Learning</h3>
                         <span class="tech-stack">Python • TensorFlow • Keras</span>
                     </div>
-                    <div class="project-desc">Prédiction de flux routier via réseaux de neurones récurrents (LSTM) et analyse de séries temporelles.</div>
+                    <div class="project-desc">Prédiction de flux routier via réseaux de neurones récurrents (LSTM) et analyse de séries temporelles. Optimisation des hyperparamètres pour fiabilité.</div>
                     <a href="https://github.com/Yameogo2004/Traffic-Deep-Learning-Prediction" class="project-link" target="_blank"><i class="fab fa-github"></i> Dépôt principal <i class="fas fa-arrow-right"></i></a>
                 </div>
+                <!-- Traffic Interface -->
                 <div class="project-item">
                     <div class="project-title">
                         <h3>📊 Traffic Interface</h3>
                         <span class="tech-stack">Flask • Tkinter • API</span>
                     </div>
-                    <div class="project-desc">Interface utilisateur interactive pour visualiser les prédictions de trafic en temps réel.</div>
+                    <div class="project-desc">Interface utilisateur interactive pour visualiser les prédictions de trafic en temps réel. Intégration du modèle Deep Learning déployé en backend.</div>
                     <a href="https://github.com/Yameogo2004/Traffic-Interface" class="project-link" target="_blank"><i class="fab fa-github"></i> Voir l'interface <i class="fas fa-arrow-right"></i></a>
                 </div>
+                <!-- Time Serie & ML Project -->
                 <div class="project-item">
                     <div class="project-title">
                         <h3>📈 Time Series & ML</h3>
                         <span class="tech-stack">Scikit-Learn • Pandas • XGBoost</span>
                     </div>
-                    <div class="project-desc">Modélisation prédictive pour données temporelles. Feature engineering, validation croisée.</div>
+                    <div class="project-desc">Modélisation prédictive pour données temporelles (consommation, météo). Feature engineering, validation croisée et métriques avancées.</div>
                     <a href="https://github.com/Yameogo2004/TIME_SERIE_PROJECT" class="project-link" target="_blank"><i class="fab fa-github"></i> Time Serie <i class="fas fa-arrow-right"></i></a>
                 </div>
+                <!-- ML-PROJECT -->
                 <div class="project-item">
                     <div class="project-title">
                         <h3>🤖 ML Pipeline</h3>
-                        <span class="tech-stack">Python • Scikit-Learn</span>
+                        <span class="tech-stack">Python • Scikit-Learn • Regression</span>
                     </div>
-                    <div class="project-desc">Pipeline complet de Machine Learning : nettoyage, modèles supervisés, évaluation.</div>
+                    <div class="project-desc">Pipeline complet de Machine Learning : nettoyage, modèles supervisés, évaluation et visualisation des performances.</div>
                     <a href="https://github.com/Yameogo2004/ML-PROJECT" class="project-link" target="_blank"><i class="fab fa-github"></i> ML-Projects <i class="fas fa-arrow-right"></i></a>
                 </div>
+                <!-- Projet NetSpot -->
                 <div class="project-item">
                     <div class="project-title">
                         <h3>🌐 PROJET NETSPOT</h3>
                         <span class="tech-stack">Cisco • Packet Tracer • VLAN</span>
                     </div>
-                    <div class="project-desc">Simulation d'infrastructure réseau sécurisée : segmentation VLAN, routage inter-VLAN.</div>
+                    <div class="project-desc">Simulation d'infrastructure réseau sécurisée : segmentation VLAN, routage inter-VLAN, Wi-Fi et politiques de sécurité.</div>
                     <a href="https://github.com/Yameogo2004/PROJET_NETSPOT" class="project-link" target="_blank"><i class="fab fa-github"></i> Config réseau <i class="fas fa-arrow-right"></i></a>
                 </div>
+                <!-- QAM Modulation -->
                 <div class="project-item">
                     <div class="project-title">
                         <h3>📡 Modulation QAM</h3>
                         <span class="tech-stack">MATLAB • Simulink</span>
                     </div>
-                    <div class="project-desc">Étude complète de modulation numérique QAM, analyse de constellation, taux d'erreur binaire.</div>
+                    <div class="project-desc">Étude complète de modulation numérique QAM, analyse de constellation, taux d’erreur binaire (BER) et canal bruité.</div>
                     <a href="https://github.com/Yameogo2004/Projet-QAM" class="project-link" target="_blank"><i class="fab fa-github"></i> Simulink & scripts <i class="fas fa-arrow-right"></i></a>
                 </div>
+                <!-- TNS PROJECT -->
                 <div class="project-item">
                     <div class="project-title">
                         <h3>📶 TNS Project</h3>
                         <span class="tech-stack">MATLAB • Réseaux</span>
                     </div>
-                    <div class="project-desc">Simulation avancée de techniques de transmission numérique, modélisation de canaux.</div>
+                    <div class="project-desc">Simulation avancée de techniques de transmission numérique, modélisation de canaux et performances de couche physique.</div>
                     <a href="https://github.com/Yameogo2004/TNS-PROJECT" class="project-link" target="_blank"><i class="fab fa-github"></i> TNS Repository <i class="fas fa-arrow-right"></i></a>
                 </div>
+                <!-- Smart Trash Bin -->
                 <div class="project-item">
                     <div class="project-title">
                         <h3>🗑️ Smart Trash Bin</h3>
                         <span class="tech-stack">Arduino • Capteurs • IoT</span>
                     </div>
-                    <div class="project-desc">Poubelle connectée avec capteur ultrasonique et notification de remplissage. Prototype IoT.</div>
+                    <div class="project-desc">Poubelle connectée avec capteur ultrasonique et notification de remplissage. Prototype réel d’IoT pour la smart city.</div>
                     <a href="https://github.com/Yameogo2004/Smart-Trash-Bin" class="project-link" target="_blank"><i class="fab fa-github"></i> Matériel & code <i class="fas fa-arrow-right"></i></a>
                 </div>
+                <!-- Electronique Proteus -->
                 <div class="project-item">
                     <div class="project-title">
                         <h3>⚡ Electronique Proteus</h3>
                         <span class="tech-stack">Proteus • µC • Simulation</span>
                     </div>
-                    <div class="project-desc">Simulation de circuits électroniques avec microcontrôleur, capteurs analogiques/numériques.</div>
+                    <div class="project-desc">Simulation de circuits électroniques avec microcontrôleur, capteurs analogiques/numériques et afficheur LCD.</div>
                     <a href="https://github.com/Yameogo2004/ELECTRONIQUE-PROJECT" class="project-link" target="_blank"><i class="fab fa-github"></i> Sim Proteus <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Compétences -->
+    <!-- Compétences avancées -->
     <section>
         <div class="section-card">
             <h2><i class="fas fa-cogs"></i> Compétences & Technologies</h2>
@@ -557,59 +492,33 @@
         </div>
     </section>
 
-    <!-- Formation & Certifications - Séparées en 2 colonnes -->
+    <!-- Formations & certifications (ajout pro) -->
     <section>
         <div class="section-card">
             <h2><i class="fas fa-graduation-cap"></i> Formation & Certifications</h2>
-            <div class="edu-cert-grid">
-                <!-- Bloc Formation -->
-                <div class="edu-block">
-                    <h3><i class="fas fa-university"></i> Formation</h3>
-                    <div class="edu-item">
-                        <h4>🎓 Cycle Ingénieur en Réseaux & Télécommunications</h4>
-                        <div class="edu-date">2023 - Présent</div>
-                        <div class="edu-desc">École Nationale des Sciences Appliquées de Tétouan · Spécialisation Cybersécurité & Intelligence Artificielle</div>
-                    </div>
-                    <div class="edu-item">
-                        <h4>📘 Classes Préparatoires</h4>
-                        <div class="edu-date">2021 - 2023</div>
-                        <div class="edu-desc">Mathématiques & Physique · Université de Ouagadougou</div>
-                    </div>
-                    <div class="edu-item">
-                        <h4>🎓 Baccalauréat Série D</h4>
-                        <div class="edu-date">2021</div>
-                        <div class="edu-desc">Lycée Privé Saint Jean Bosco · Mention Bien</div>
-                    </div>
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+                <div>
+                    <h3 style="margin-bottom: 0.2rem;">🎓 Cycle Ingénieur en Réseaux & Télécommunications</h3>
+                    <p style="color: #2c5f8a; font-weight: 500;">École Nationale des Sciences Aplliquées de Tétouan</p>
                 </div>
-
-                <!-- Bloc Certifications -->
-                <div class="cert-block">
-                    <h3><i class="fas fa-certificate"></i> Certifications</h3>
-                    <div class="cert-item">
-                        <h4>📜 Cisco CCNA (en cours)</h4>
-                        <div class="cert-date">2024 - 2025</div>
-                        <div class="cert-desc">Réseaux d'entreprise, sécurité, automatisation et protocoles avancés.</div>
-                    </div>
-                    <div class="cert-item">
-                        <h4>🤖 Deep Learning Specialization</h4>
-                        <div class="cert-date">2024</div>
-                        <div class="cert-desc">Réseaux de neurones, CNN, RNN, optimisation avancée (Coursera).</div>
-                    </div>
-                    <div class="cert-item">
-                        <h4>☁️ AWS Cloud Practitioner (en cours)</h4>
-                        <div class="cert-date">2025</div>
-                        <div class="cert-desc">Fondamentaux du cloud AWS, services et architecture.</div>
-                    </div>
-                    <div class="award-badge">
-                        <i class="fas fa-trophy"></i>
-                        <div><strong>Projet primé :</strong> Participation au hackathon IoT & GreenTech 2024 (Smart Trash Bin)</div>
-                    </div>
+                <div>
+                    <h3 style="margin-bottom: 0.2rem;">📜 Certifications Cisco CCNA (en cours)</h3>
+                    <p>Réseaux d'entreprise, sécurité, automatisation.</p>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 0.2rem;">🤖 Deep Learning Specialization (Coursera / équivalent)</h3>
+                    <p>Réseaux de neurones, CNN, RNN, optimisation avancée.</p>
+                </div>
+                <hr>
+                <div>
+                    <i class="fas fa-trophy" style="color: #f4b942; margin-right: 8px;"></i>
+                    <strong>Projets primés :</strong> Participation au hackathon IoT & GreenTech 2024 (Smart Trash Bin)
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact -->
+    <!-- Contact + réseaux professionnels -->
     <section>
         <div class="section-card">
             <h2><i class="fas fa-paper-plane"></i> Contact & réseaux</h2>
@@ -628,13 +537,13 @@
                 </div>
             </div>
             <hr>
-            <p style="margin-top: 1rem; font-size: 0.9rem; display: flex; align-items: center; gap: 10px;"><i class="fas fa-map-marker-alt"></i> Basé entre Maroc & Burkina Faso · Ouvert à des opportunités en réseaux, télécoms, cloud engineering et IA.</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; display: flex; align-items: center; gap: 10px;"><i class="fas fa-map-marker-alt"></i> Basé entre Maroc & Burkina Faso · Ouvert à des opportunités en réseaux, télecoms , cloud engineering,  et IA.</p>
         </div>
     </section>
 </div>
 
 <footer>
-    <p>© 2025 Ariel Barthélémy Wendtoin YAMEOGO — Portfolio Ingénieur | Construit avec <i class="fas fa-heart" style="color: #ff7b72;"></i> pour l'innovation et la fiabilité.</p>
+    <p>© 2025 Ariel Barthélémy Wendtoin YAMEOGO — Portfolio Ingénieur | Construit avec <i class="fas fa-heart" style="color: #ff7b72;"></i> pour l’innovation et la fiabilité.</p>
     <p style="margin-top: 0.5rem; font-size: 0.75rem;">Dernière mise à jour : Mars 2025 — Tous les projets sont accessibles sur GitHub.</p>
 </footer>
 
